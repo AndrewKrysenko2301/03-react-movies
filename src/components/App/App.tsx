@@ -20,7 +20,9 @@ function App() {
       setError(false);
       setMovies([]);
 
-      const data = await fetchMovies(`search/movie?query=${query}`);
+      const data = await fetchMovies(
+        `search/movie?query=${encodeURIComponent(query)}`
+      );
       if (data.results.length === 0) {
         toast.error("No movies found for your request.");
         setMovies([]);
