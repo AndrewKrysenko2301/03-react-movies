@@ -17,8 +17,7 @@ export const fetchMovies = async (
     `https://api.themoviedb.org/3/${endpoint}`,
     {
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZmZjNGYwMjVhYWJkMGY2YjE2MzgwYzlmZDdjODJiYSIsIm5iZiI6MTc1NzE5MTc0MC44MjIsInN1YiI6IjY4YmM5ZTNjZTFjODBkMTE1NDk0NzBjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hlTBp6JfFTPU3J7FXh9rG_Z7vpiDCBfMixVtS_b5Occ",
+        Authorization: "Bearer ${import.meta.env.VITE_TMDB_TOKEN}",
         "Content-Type": "application/json",
       },
     }
