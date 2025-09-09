@@ -1,5 +1,11 @@
 import axios from "axios";
-import type { MoviesResponse } from "../types/movie";
+import type { Movie } from "../types/movie";
+
+export interface MoviesResponse {
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+}
 
 export const fetchMovies = async (
   endpoint: string
