@@ -1,5 +1,4 @@
 import axios from "axios";
-import type { AxiosResponse } from "axios";
 import type { MoviesResponse } from "../types/movie";
 
 export const fetchMovies = async (
@@ -13,11 +12,11 @@ export const fetchMovies = async (
     );
   }
 
-  const response: AxiosResponse<MoviesResponse> = await axios.get(
+  const response = await axios.get<MoviesResponse>(
     `https://api.themoviedb.org/3/${endpoint}`,
     {
       headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
     }
